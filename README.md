@@ -8,8 +8,8 @@ Rules
 ----
 1. The entire solution must be written in C# .net5
 2. Please modify the solution anyway you prefer. 
-	a. You can modify classes, rename and add methods, change property types, add projects 
-	b. Use libraries or frameworks (must be .net based)
+   1. You can modify classes, rename and add methods, change property types, add projects 
+   1. Use libraries or frameworks (must be .net based)
 3. Write tests
 
 Show your skills
