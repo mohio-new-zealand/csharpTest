@@ -19,7 +19,7 @@ namespace MohioTechnicalBaseTest
         
         public void Add(Immunisation immunisation)
         {
-            throw new NotImplementedException();
+            _immunisationList.Add(immunisation)
         }
 
         public Immunisation Get(int immunisationId)
@@ -33,7 +33,7 @@ namespace MohioTechnicalBaseTest
         }
 
         /// <summary>
-        /// The total count the Immunisation Given 1 month before
+        /// The total count the Immunisation Status is Given and recored last month
         /// </summary>
         public decimal GetTotal()
         {
