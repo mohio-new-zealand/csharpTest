@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Source",
+    "\\Source\\ImmunisationAPI",
+    "\\Source\\ImmunisationAPI.Tests",
+    "\\Source\\ImmunisationAPI.Tests\\obj",
+    "\\Source\\ImmunisationAPITests",
+    "\\Source\\ImmunisationAPITests\\Repositories",
+    "\\Source\\ImmunisationAPI\\Controllers",
+    "\\Source\\ImmunisationAPI\\Models",
+    "\\Source\\ImmunisationAPI\\obj"
+  ],
+  "SelectedNode": "\\Source\\ImmunisationAPI\\Models\\PatientImmunisation.cs",
+  "PreviewInSolutionExplorer": false
+}
