@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MohioTechnicalBaseTest
 {
     public class Patient
     {
-        private List<Immunisation> _immunisationList;
+        private List<Immunisation> immunisationList = new List<Immunisation>();
 
         /// <summary>
         /// Must be unique
@@ -19,17 +20,33 @@ namespace MohioTechnicalBaseTest
         
         public void Add(Immunisation immunisation)
         {
-            _immunisationList.Add(immunisation)
+            immunisationList.Add(immunisation);
         }
 
         public Immunisation Get(int immunisationId)
         {
-            throw new NotImplementedException();
+            Immunisation patient = new Immunisation();
+            foreach(var immunisation in immunisationList)
+            {
+                if(immunisation.ImmunisationId == immunisationId)
+                {
+                    patient = immunisation;
+                }
+                
+            }
+
+            return patient;
         }
 
         public void Remove(int immunisationId)
         {
-            throw new NotImplementedException();
+            for(int i=0; i<= immunisationList.Count;i++)
+            {
+                if(immunisationList[i].ImmunisationId == immunisationId)
+                {
+                    immunisationList.RemoveAt(i);
+                }
+            }
         }
 
         /// <summary>
@@ -37,7 +54,17 @@ namespace MohioTechnicalBaseTest
         /// </summary>
         public decimal GetTotal()
         {
-            throw new NotImplementedException();
+            int Count = 0;
+           DateTime lastMonth = DateTime.Now.AddMonths(-1);
+            foreach (var immunisation in immunisationList)
+            {
+                if (immunisation.CreatedDate.Month == lastMonth.Month && immunisation.Outcome == Outcome.Given)
+                    {
+                        Count++;
+                    }
+            }
+            return Count;
+           
         }
 
         /// <summary>
@@ -46,15 +73,24 @@ namespace MohioTechnicalBaseTest
         /// <param name="sourcePatient">patient to merge from</param>
         public void Merge(Patient sourcePatient)
         {
-            throw new NotImplementedException();
+            foreach (var item in sourcePatient.immunisationList.ToList())
+            {
+                Immunisation patient = new Immunisation
+                {
+                    ImmunisationId = item.ImmunisationId,
+                    Outcome = item.Outcome,
+                    Vaccine = item.Vaccine,
+                    CreatedDate = item.CreatedDate
+                };
+                sourcePatient.Add(patient);
+            }
         }
-
         /// <summary>
         /// Creates a deep clone of the current Patient (all fields and properties)
         /// </summary>
         public Patient Clone()
         {
-            throw new NotImplementedException();
+            return (Patient)this;
         }
 
         /// <summary>
@@ -63,7 +99,8 @@ namespace MohioTechnicalBaseTest
         /// </summary>
         public override string ToString()
         {
-            throw new NotImplementedException();
+            string patientrecord = "Id : " + this.Id + ", CreatedDate : " + this.CreatedDate + ", ImmunisationListCount : " + this.immunisationList.Count;
+            return patientrecord;
         }
     }
 }
