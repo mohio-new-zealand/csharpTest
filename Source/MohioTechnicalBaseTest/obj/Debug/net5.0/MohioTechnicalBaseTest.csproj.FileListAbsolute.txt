@@ -1,0 +1,16 @@
+C:\Users\micha\Tmp\csharpTest\Source\MohioTechnicalBaseTest\obj\Debug\net5.0\MohioTechnicalBaseTest.csprojAssemblyReference.cache
+C:\Users\micha\Tmp\csharpTest\Source\MohioTechnicalBaseTest\obj\Debug\net5.0\MohioTechnicalBaseTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\micha\Tmp\csharpTest\Source\MohioTechnicalBaseTest\obj\Debug\net5.0\MohioTechnicalBaseTest.AssemblyInfoInputs.cache
+C:\Users\micha\Tmp\csharpTest\Source\MohioTechnicalBaseTest\obj\Debug\net5.0\MohioTechnicalBaseTest.AssemblyInfo.cs
+C:\Users\micha\Tmp\csharpTest\Source\MohioTechnicalBaseTest\obj\Debug\net5.0\MohioTechnicalBaseTest.csproj.CoreCompileInputs.cache
+C:\Users\micha\Tmp\csharpTest\Source\MohioTechnicalBaseTest\bin\Debug\net5.0\MohioTechnicalBaseTest.exe
+C:\Users\micha\Tmp\csharpTest\Source\MohioTechnicalBaseTest\bin\Debug\net5.0\MohioTechnicalBaseTest.deps.json
+C:\Users\micha\Tmp\csharpTest\Source\MohioTechnicalBaseTest\bin\Debug\net5.0\MohioTechnicalBaseTest.runtimeconfig.json
+C:\Users\micha\Tmp\csharpTest\Source\MohioTechnicalBaseTest\bin\Debug\net5.0\MohioTechnicalBaseTest.runtimeconfig.dev.json
+C:\Users\micha\Tmp\csharpTest\Source\MohioTechnicalBaseTest\bin\Debug\net5.0\MohioTechnicalBaseTest.dll
+C:\Users\micha\Tmp\csharpTest\Source\MohioTechnicalBaseTest\bin\Debug\net5.0\ref\MohioTechnicalBaseTest.dll
+C:\Users\micha\Tmp\csharpTest\Source\MohioTechnicalBaseTest\bin\Debug\net5.0\MohioTechnicalBaseTest.pdb
+C:\Users\micha\Tmp\csharpTest\Source\MohioTechnicalBaseTest\obj\Debug\net5.0\MohioTechnicalBaseTest.dll
+C:\Users\micha\Tmp\csharpTest\Source\MohioTechnicalBaseTest\obj\Debug\net5.0\ref\MohioTechnicalBaseTest.dll
+C:\Users\micha\Tmp\csharpTest\Source\MohioTechnicalBaseTest\obj\Debug\net5.0\MohioTechnicalBaseTest.pdb
+C:\Users\micha\Tmp\csharpTest\Source\MohioTechnicalBaseTest\obj\Debug\net5.0\MohioTechnicalBaseTest.genruntimeconfig.cache
