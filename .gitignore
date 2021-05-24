@@ -1,0 +1,12 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+
+/.vs
+/Source/.vs
+/Source/MohioTechnicalBaseTest/bin
+/Source/MohioTechnicalBaseTest/obj
+/Source/MohioTechnicalBaseTestUnitTest/bin
+/Source/MohioTechnicalBaseTestUnitTest/obj
+/Source/packages

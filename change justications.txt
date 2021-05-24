@@ -1,0 +1,33 @@
+===============================
+ Program.cs
+===============================
+
+The patient constructor changed, it no longer takes in an id. I've chosen to specify the argument name for the created date since it describes in the code what the `DateTime.Now` is, without having to go through to the Patient constructor. I'm of the opinion that this makes the code easier to maintain. Of course in an existing project I would strive to write code in the same style as the rest of the project/follow whatever style guidelines might be in place.
+
+I changed the immunisation ids since they have to be unique so it's invalid to give different ids.
+
+===============================
+ Patient.cs
+===============================
+
+It seems unlikely that we would want to change the Id of a patient, so making read only.
+
+CreatedDate isn't allowed to change so make it read only.
+
+Add an enumerable list of `Immunisations`. Thi is useful to be able to provide read only access to the list. Using IEnumerable in the public field means we can change the underlying data structure without a breaking change. This also prevents the contents of the list from being edited from outside the class.
+
+Rename Add() to AddImmunisation() as it better explains what the method is doing. Similarily renamed Get() to GetImmunisation(). Added implementations.
+
+Throwing an exception in GetImmunisation() might not be correct, it may make more sense to return null. It really depends on how it gets used.
+
+Same thing with Remove Immunisation.
+
+I've chosen to return the Immunisation that was just removed, as this can sometimes be useful to calling code.
+
+Rename GetTotal() to GetRecentGivenImmunisationCount() to better describe what the method is calculating. Return int rather than decimal since the count of immunisations is always a whole number.
+
+Added implementation for Merge(). Immunisations must have a unique id, which poses the question of what to do if there are already immunisations with a given id on the destination patient (ie `this`). Chosen currently to skip them since they have the same id so are representing the same immunisation. However if this isn't the case and immunisations have ids unique only within their patient (rather than globally) we would need to generate a new id for the immunisation and add it. We would also need a new way to identify duplicate immunisations so we don't add the same immunisation multiple times.
+
+Implemented clone, normally I would ask the database (or wherever) to generate a new Id for the new patient, could also use Guids which makes it very easy to generate new unique ids. I added a clone method to `Immunisation.cs` since the code to copy immunisations should live there.
+
+Added ToString() override using hard-coded date formatting, since that's what the method description calls for. I would prefer to format however the current locale usually formats dates, but localisation is a big issue to get into.

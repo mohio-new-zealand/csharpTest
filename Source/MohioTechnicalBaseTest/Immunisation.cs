@@ -14,5 +14,16 @@ namespace MohioTechnicalBaseTest
         public Outcome? Outcome { get; set; }
 
         public DateTime CreatedDate { get; set; }
+
+        public Immunisation Clone()
+        {
+            return new Immunisation()
+            {
+                ImmunisationId = ImmunisationId,
+                Vaccine = Vaccine,
+                Outcome = Outcome,
+                CreatedDate = CreatedDate,
+            };
+        }
     }
 }

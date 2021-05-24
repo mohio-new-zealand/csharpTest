@@ -42,13 +42,9 @@ namespace MohioTechnicalBaseTest
         
         private static void CreatePatientWithOneImmunisation()
         {
-            var patient = new Patient
-            {
-                Id = 100,
-                CreatedDate = DateTime.Now
-            };
+            var patient = new Patient(createdDate: DateTime.Now);
 
-            patient.Add(new Immunisation
+            patient.AddImmunisation(new Immunisation
             {
                 ImmunisationId = 10,
                 Vaccine = "Flu Diabetes",
@@ -56,18 +52,14 @@ namespace MohioTechnicalBaseTest
                 CreatedDate = DateTime.Now
             });
 
-            Console.WriteLine(patient.GetTotal());
+            Console.WriteLine(patient.GetRecentGivenImmunisationCount());
         }
 
         private static void CreatePatientWithMultipleImmunisation()
         {
-            var patient = new Patient
-            {
-                Id = 100,
-                CreatedDate = DateTime.Now
-            };
+            var patient = new Patient(createdDate: DateTime.Now);
 
-            patient.Add(new Immunisation
+            patient.AddImmunisation(new Immunisation
             {
                 ImmunisationId = 10,
                 Vaccine = "Flu Diabetes",
@@ -75,34 +67,30 @@ namespace MohioTechnicalBaseTest
                 CreatedDate = DateTime.Now
             });
 
-            patient.Add(new Immunisation
+            patient.AddImmunisation(new Immunisation
             {
-                ImmunisationId = 10,
+                ImmunisationId = 11,
                 Vaccine = "Flu 65+",
                 Outcome = Outcome.NonResponder,
                 CreatedDate = DateTime.Now
             });
 
-            patient.Add(new Immunisation
+            patient.AddImmunisation(new Immunisation
             {
-                ImmunisationId = 10,
+                ImmunisationId = 12,
                 Vaccine = "Flu Vaccine PHO",
                 Outcome = Outcome.Given,
                 CreatedDate = DateTime.Now.AddMonths(-2)
             });
 
-            Console.WriteLine(patient.GetTotal());
+            Console.WriteLine(patient.GetRecentGivenImmunisationCount());
         }
 
         private static void RemoveImmunisation()
         {
-            var patient = new Patient
-            {
-                Id = 100,
-                CreatedDate = DateTime.Now
-            };
+            var patient = new Patient(createdDate: DateTime.Now);
 
-            patient.Add(new Immunisation
+            patient.AddImmunisation(new Immunisation
             {
                 ImmunisationId = 10,
                 Vaccine = "Flu Diabetes",
@@ -110,35 +98,31 @@ namespace MohioTechnicalBaseTest
                 CreatedDate = DateTime.Now
             });
 
-            patient.Add(new Immunisation
+            patient.AddImmunisation(new Immunisation
             {
-                ImmunisationId = 10,
+                ImmunisationId = 11,
                 Vaccine = "Flu 65+",
                 Outcome = Outcome.Given,
                 CreatedDate = DateTime.Now.AddDays(-15)
             });
 
-            patient.Add(new Immunisation
+            patient.AddImmunisation(new Immunisation
             {
-                ImmunisationId = 10,
+                ImmunisationId = 12,
                 Vaccine = "Flu Vaccine PHO",
                 Outcome = Outcome.Given,
                 CreatedDate = DateTime.Now.AddMonths(-2)
             });
 
-            patient.Remove(10);
-            Console.WriteLine(patient.GetTotal());
+            _ = patient.RemoveImmunisation(10);
+            Console.WriteLine(patient.GetRecentGivenImmunisationCount());
         }
 
         private static void MergePatients()
         {
-            var patient1 = new Patient
-            {
-                Id = 100,
-                CreatedDate = DateTime.Now
-            };
+            var patient1 = new Patient(createdDate: DateTime.Now);
 
-            patient1.Add(new Immunisation
+            patient1.AddImmunisation(new Immunisation
             {
                 ImmunisationId = 10,
                 Vaccine = "Flu Diabetes",
@@ -146,33 +130,25 @@ namespace MohioTechnicalBaseTest
                 CreatedDate = DateTime.Now
             });
 
-            var patient2 = new Patient
-            {
-                Id = 100,
-                CreatedDate = DateTime.Now
-            };
+            var patient2 = new Patient(createdDate: DateTime.Now);
 
-            patient2.Add(new Immunisation
+            patient2.AddImmunisation(new Immunisation
             {
-                ImmunisationId = 10,
+                ImmunisationId = 11,
                 Vaccine = "Flu 65+",
                 Outcome = Outcome.Given,
                 CreatedDate = DateTime.Now.AddDays(-15)
             });
 
             patient1.Merge(patient2);
-            Console.WriteLine(patient1.GetTotal());
+            Console.WriteLine(patient1.GetRecentGivenImmunisationCount());
         }
 
         private static void ClonePatient()
         {
-            var patient1 = new Patient
-            {
-                Id = 100,
-                CreatedDate = DateTime.Now
-            };
+            var patient1 = new Patient(createdDate: DateTime.Now);
 
-            patient1.Add(new Immunisation
+            patient1.AddImmunisation(new Immunisation
             {
                 ImmunisationId = 10,
                 Vaccine = "Flu Diabetes",
@@ -182,21 +158,17 @@ namespace MohioTechnicalBaseTest
 
             var patient2 = patient1.Clone();
 
-            patient2.Get(10).Outcome = Outcome.AlternativeGiven;
+            patient2.GetImmunisation(10).Outcome = Outcome.AlternativeGiven;
 
-            Console.WriteLine(patient1.GetTotal());
-            Console.WriteLine(patient2.GetTotal());
+            Console.WriteLine(patient1.GetRecentGivenImmunisationCount());
+            Console.WriteLine(patient2.GetRecentGivenImmunisationCount());
         }
 
         private static void PatientToString()
         {
-            var patient = new Patient
-            {
-                Id = 100,
-                CreatedDate = DateTime.Now
-            };
+            var patient = new Patient(createdDate: DateTime.Now);
 
-            patient.Add(new Immunisation
+            patient.AddImmunisation(new Immunisation
             {
                 ImmunisationId = 10,
                 Vaccine = "Flu Diabetes",
@@ -204,9 +176,9 @@ namespace MohioTechnicalBaseTest
                 CreatedDate = DateTime.Now
             });
 
-            patient.Add(new Immunisation
+            patient.AddImmunisation(new Immunisation
             {
-                ImmunisationId = 10,
+                ImmunisationId = 11,
                 Vaccine = "Flu Vaccine PHO",
                 Outcome = Outcome.Given,
                 CreatedDate = DateTime.Now.AddMonths(-2)
