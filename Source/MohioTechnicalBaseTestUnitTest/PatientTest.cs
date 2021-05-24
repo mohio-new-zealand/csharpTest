@@ -28,8 +28,6 @@ namespace MohioTechnicalBaseTestUnitTest
                 CreatedDate = DateTime.Now,
             });
             
-            Assert.IsTrue(patient.Immunisations.Count() == 1);
-
             patient.AddImmunisation(new Immunisation()
             {
                 ImmunisationId = 11,
@@ -38,7 +36,7 @@ namespace MohioTechnicalBaseTestUnitTest
                 CreatedDate = DateTime.Now
             });
 
-            Assert.IsTrue(patient.Immunisations.Count() == 2);
+            Assert.IsTrue(patient.Immunisations.Count() == 2, "Should have two Immunisation after calling AddImmunisation() twice.");
         }
 
         [TestMethod]
@@ -57,7 +55,7 @@ namespace MohioTechnicalBaseTestUnitTest
 
             patient.AddImmunisation(immunisation);
 
-            Assert.IsTrue(patient.Immunisations.Count() == 1);
+            Assert.IsTrue(patient.Immunisations.Count() == 1, "Should only have one Immunisation after trying to insert the same immunisation twice.");
         }
 
         [TestMethod]
@@ -81,7 +79,7 @@ namespace MohioTechnicalBaseTestUnitTest
                 CreatedDate = DateTime.Now
             });
 
-            Assert.IsTrue(patient.Immunisations.Count() == 1);
+            Assert.IsTrue(patient.Immunisations.Count() == 1, "Should only have one Immunisation after trying to insert two immunisations with the same Id.");
         }
     }
 }
