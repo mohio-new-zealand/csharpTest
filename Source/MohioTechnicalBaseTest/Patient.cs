@@ -31,12 +31,19 @@ namespace MohioTechnicalBaseTest
         public IEnumerable<Immunisation> Immunisations { get => _immunisationList; }
 
         /// <summary>
-        /// Adds the immunisation to the list of immunisations, if it isn't already contained.
+        /// Adds the immunisation to the list of immunisations, if there isn't already an immunisation with that id.
         /// </summary>
         /// <param name="immunisation"></param>
         public void AddImmunisation(Immunisation immunisation)
         {
-            _immunisationList.Add(immunisation);
+            if (Immunisations.Any(imm => imm.ImmunisationId == immunisation.ImmunisationId))
+            {
+                return;
+            }
+            else
+            {
+                _immunisationList.Add(immunisation);
+            }
         }
 
         /// <summary>
